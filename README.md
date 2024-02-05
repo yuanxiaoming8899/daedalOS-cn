@@ -1,262 +1,328 @@
-## 🌌 **daedalOS** 🌌
-
-## _Desktop environment in the browser_
-
-[![Feature Overview](https://img.youtube.com/vi/RRLq3T0Surs/mqdefault.jpg)](http://www.youtube.com/watch?v=RRLq3T0Surs)
-
-# System 🧠
-
-### [File System](https://github.com/jvilk/BrowserFS)
-
-- File Explorer
-  - Back, Forward, Recent locations, Up one level, Address bar, Search
-- [Drag & Drop](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) File Support (internal & external)
-  - Loading progress dialog
-- ZIP ([write support](https://www.npmjs.com/package/fflate)), [ZIP](https://github.com/jvilk/BrowserFS/blob/master/src/backend/ZipFS.ts)/[ISO](https://github.com/jvilk/BrowserFS/blob/master/src/backend/IsoFS.ts) read support, [7Z/GZ/RAR/TAR/etc. extract](https://github.com/use-strict/7z-wasm) support
-- Writes to [IndexedDb](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
-- Group selection/manipulation & drag to sort/arrange
-- Dynamic and auto cached icons for [music](https://github.com/Borewit/music-metadata-browser), images, video & emulator states
-- Context Menus
-  - Cut, Copy, Create shortcut, Delete, Rename
-  - [Add file(s)](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications), [Map directory](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API)
-  - Open with options/dialog, Open file/folder location, Open in new window, Open Terminal here
-  - Download, Add to archive, Extract here, Set as wallpaper, Convert audio/video/photo/spreadsheets, Properties (w/Details)
-  - Sort by, New Folder, New Text Document
-  - Screen Capture
-- Keyboard Shortcuts
-  - CTRL+C, CTRL+V, CTRL+X, CTRL+A, Delete
-  - F2, F5, Backspace, Arrows, Enter
-  - SHIFT+CTRL+R, SHIFT+F10, SHIFT+F12
-  - In Fullscreen: Windows Key, Windows Key + R
-- File information tooltips
-- Allow sorting by name, size, type or date
-  - Persists icon position/sort order
-
-### Windows
-
-- [Resizable and Draggable](https://github.com/bokuweb/react-rnd)
-- Minimize, Maximize & Close
-- Persists size/position/maximized states
-- [Animates](https://www.framer.com/motion/) opening and closing
-
-### Start Menu
-
-- Expandable Sidebar
-  - Apps list, Documents/Pictures/Videos shortcuts, Power (clears session)
-- Spotlight visual effect
-- Folder support
-- Keyboard shortcut opens with **_SHIFT+ESC_**
-  - Or Windows Key when in fullscreen
-
-### Taskbar
-
-- [Peek](https://github.com/bubkoo/html-to-image) hover preview of windows
-- Focused window indicator
-- Search menu (w/Recent files)
-
-### Clock
-
-- Runs in a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
-  - Drawn in an [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas)
-- NTP server time mode ([ntp.js](http://www.ntpjs.org/))
-- Synced to system clock on load
-- Date tooltip
-- Calendar popup
-
-### Background
-
-- Dynamic animated wallpapers ([OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas)/[Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers))
-  - [Waves](https://www.vantajs.com/?effect=waves)
-  - [Hexells](https://znah.net/hexells/)
-  - [Matrix](https://rezmason.github.io/matrix/)
-  - [Coastal Landscape](https://www.shadertoy.com/view/fstyD4)
-- Set via image/video (Fill, Fit, Stretch, Tile, Center)
-- Picture Slideshow
-- [Astronomy Picture of the Day](https://api.nasa.gov/#apod)
-- AI Generated Wallpapers [Stable Diffusion](https://stability.ai/stable-diffusion)
-
-### URL
-
-- Query parameter loading
-  - Examples:
-    - `/?url=/CREDITS.md`
-    - `/?app=Browser`
-
-# Apps 🧪
-
-### [BoxedWine](http://www.boxedwine.org/) (**_.exe, .zip_**)
-
-- Runs 16/32-bit Windows applications
-
-### Browser (**_.htm, .html_**)
-
-- Loads websites (_w/CORS support_)
-- Bookmark bar
-- Favicon support
-- Back/Forward & Reload
-- Google search via Address bar
-- IPFS protocol support
-- [chrome://dino](https://github.com/wayou/t-rex-runner) game
-
-### [DevTools](https://eruda.liriliri.io/)
-
-- Console, Elements, Network, Resources, Sources, DOM
-- Activate from Start Menu or **_SHIFT+F12_**
-
-### [EmulatorJS](https://github.com/ethanaobrien/emulatorjs) (**_.32x, .a26, .a52, .a78, .gb, .gba, .gbc, .gen, .gg, .j64, .jag, .lnx, .n64, .nds, .nes, .ngc, .ngp, .pce, .sfc, .smc, .smd, .sms, .v64, .vb, .vboy, .ws, .wsc, .z64_**)
-
-- Plays console game roms
-
-### [IRC](https://kiwiirc.com/)
-
-- Internet Relay Chat Client
-- Connects over WebSockets
-
-### [js-dos](https://js-dos.com/) (**_.exe, .jsdos, .zip_**)
-
-- DOS emulator
-- Automatic save states on close
-  - /Users/Public/Snapshots
-- Automatic window resize
-
-### [Marked](https://marked.js.org/) (**_.md_**)
-
-- Markdown Viewer
-
-### Messenger
-
-- Encrypted direct messaging client
-- Utilizes [Nostr Protocol](https://nostr.com/) ([NIP-04](https://github.com/nostr-protocol/nips/blob/master/04.md))
-- Automatic public/private key creation
-
-### [Monaco Editor](https://microsoft.github.io/monaco-editor/)
-
-- Code/text editor
-- Supports all file types
-- Save files via **_CTRL+S_**
-- Line count, cursor position, language id
-- [Prettier](https://prettier.io/) formatting
-  - json, js/ts, css/sass/less, html, markdown
-
-### [Paint](https://github.com/1j01/jspaint) (**_.bmp, .gif, .ico, .jpg, .png, .tiff, .webp,_**)
-
-- Create & edit images
-
-### [PDF](https://mozilla.github.io/pdf.js/) (**_.pdf_**)
-
-- Render/Print PDF's
-- Page current/count & Zoom
-
-### Photos
-
-- [Supported Formats](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#supported_image_formats)
-  - [JPEG XL](https://github.com/niutech/jxl.js) (**_.jxl_**)
-  - [QOI](https://gist.github.com/nicolaslegland/f0577cb49b1e56b729a2c0fc0aa151ba) (**_.qoi_**)
-  - [TIFF](https://github.com/photopea/UTIF.js) (**_.tif, .tiff_**)
-- Fullscreen & [Zoom](https://github.com/anvaka/panzoom)
-
-### [Ruffle](https://ruffle.rs/) (**_.swf, .spl_**)
-
-- Flash Player emulator
-
-### [Stable Diffusion](https://stability.ai/stable-diffusion)
-
-- Creates 512x512 images using artificial intelligence
-- Runs locally using [WebSD](https://mlc.ai/web-stable-diffusion/)
-
-### [Terminal](https://xtermjs.org/)
-
-- File system support
-- Autocomplete & history
-- Pipe commands together
-- Command list via `help`
-- [Git support](https://isomorphic-git.org/) (checkout & clone)
-- [Python support](https://pyodide.org/) (**_.py_**)
-- [WebAssembly Package Manager](https://wapm.io/)
-  - Ex: `wapm cowsay moo` ([\#](https://wapm.io/package/cowsay))
-- [Weather information](https://wttr.in/)
-- [eSheep](https://adrianotiger.github.io/web-esheep/)
-- Activate from Start Menu or **_SHIFT+F10_**
-- Neofetch
-
-### [TinyMCE](https://www.tiny.cloud/tinymce/) (**_.rtf, .whtml_**)
-
-- Read & WYSIWYG modes
-- File save support
-
-### [Virtual x86](https://copy.sh/v86/) (**_.img, .iso_**)
-
-- x86 emulator
-- Automatic save states on close
-  - /Users/Public/Snapshots
-- Automatic window resize
-
-### [Video Player](https://videojs.com/)
-
-- [Supported Formats](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
-- Plays [YouTube](https://github.com/videojs/videojs-youtube) videos/shortcuts
-- Keyboard Shortcuts (Volume, Seek, Scale, Fullscreen)
-
-### [Vim](https://github.com/coolwanglu/vim.js)
-
-- Code/text editor
-- Supports all file types
-
-### [Webamp](https://webamp.org/) (**_.mp3, .wsz_**)
-
-- Winamp audio player
-- [Skin support](https://skins.webamp.org/)
-- Playlist & streaming support
-- Visualization support (["Milkdrop"](https://github.com/jberg/butterchurn))
-
-# Games 🎮
-
-### [ClassiCube](https://www.classicube.net/)
-
-- Minecraft Classic compatible client
-
-### [DX-Ball](https://habr.com/en/post/147339/)
-
-- Block breaker arcade game like Arkanoid
-
-### [Space Cadet Pinball](https://github.com/alula/SpaceCadetPinball)
-
-- Reverse engineering of 3D Pinball from Windows
-
-### [Quake III Arena](https://github.com/lrusso/Quake3)
-
-- Port of the classic first-person shooter
-
-# Try It 🚀
-
-##### Requirements
-
-- [Node.js](https://nodejs.org/en/download/)
-- [Yarn](https://yarnpkg.com/en/)
-
-##### Development
-
-```
-yarn install
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><h2 tabindex="-1" dir="auto"><a id="user-content--daedalos-" class="anchor" aria-hidden="true" tabindex="-1" href="#-daedalos-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">🌌daedalOS </font><font style="vertical-align: inherit;">🌌 </font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">_</font></font></strong><font style="vertical-align: inherit;"></font></h2>
+<h2 tabindex="-1" dir="auto"><a id="user-content-desktop-environment-in-the-browser" class="anchor" aria-hidden="true" tabindex="-1" href="#desktop-environment-in-the-browser"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">浏览器中的桌面环境</font></font></em></h2>
+<p dir="auto"><a href="http://www.youtube.com/watch?v=RRLq3T0Surs" rel="nofollow"><img src="https://camo.githubusercontent.com/3a94b78d4570fdac3c10b1727f393d0e15cfdb1a39d6b4fa19fd8f78f2715cd1/68747470733a2f2f696d672e796f75747562652e636f6d2f76692f52524c71335430537572732f6d7164656661756c742e6a7067" alt="功能概述" data-canonical-src="https://img.youtube.com/vi/RRLq3T0Surs/mqdefault.jpg" style="max-width: 100%;"></a></p>
+<h1 tabindex="-1" dir="auto"><a id="user-content-system-" class="anchor" aria-hidden="true" tabindex="-1" href="#system-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">系统🧠</font></font></h1>
+<h3 tabindex="-1" dir="auto"><a id="user-content-file-system" class="anchor" aria-hidden="true" tabindex="-1" href="#file-system"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://github.com/jvilk/BrowserFS"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件系统</font></font></a></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件管理器
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">后退、前进、最近位置、上一级、地址栏、搜索</font></font></li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">拖放</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件支持（内部和外部）
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">加载进度对话框</font></font></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ZIP（</font></font><a href="https://www.npmjs.com/package/fflate" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">写入支持</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）、</font></font><a href="https://github.com/jvilk/BrowserFS/blob/master/src/backend/ZipFS.ts"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ZIP</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> / </font></font><a href="https://github.com/jvilk/BrowserFS/blob/master/src/backend/IsoFS.ts"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ISO</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">读取支持、</font></font><a href="https://github.com/use-strict/7z-wasm"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7Z/GZ/RAR/TAR/等。</font><font style="vertical-align: inherit;">提取</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">写入</font></font><a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IndexedDb</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">组选择/操作和拖动以排序/排列</font></font></li>
+<li><font style="vertical-align: inherit;"></font><a href="https://github.com/Borewit/music-metadata-browser"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">音乐</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、图像、视频和模拟器状态</font><font style="vertical-align: inherit;">的动态和自动缓存图标</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上下文菜单
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">剪切、复制、创建快捷方式、删除、重命名</font></font></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">添加文件</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">映射目录</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用选项/对话框打开、打开文件/文件夹位置、在新窗口中打开、在此处打开终端</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下载，添加到存档，在此处提取，设置为壁纸，转换音频/视频/照片/电子表格，属性（带详细信息）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">排序依据、新建文件夹、新建文本文档</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">屏幕截图</font></font></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">键盘快捷键
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CTRL+C、CTRL+V、CTRL+X、CTRL+A、删除</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">F2、F5、退格键、箭头、Enter</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SHIFT+CTRL+R、SHIFT+F10、SHIFT+F12</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">全屏：Windows 键、Windows 键 + R</font></font></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件信息工具提示</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">允许按名称、大小、类型或日期排序
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">保留图标位置/排序顺序</font></font></li>
+</ul>
+</li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-windows" class="anchor" aria-hidden="true" tabindex="-1" href="#windows"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视窗</font></font></h3>
+<ul dir="auto">
+<li><a href="https://github.com/bokuweb/react-rnd"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可调整大小和可拖动</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最小化、最大化和关闭</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">保持尺寸/位置/最大化状态</font></font></li>
+<li><a href="https://www.framer.com/motion/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">动画</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">打开和关闭</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-start-menu" class="anchor" aria-hidden="true" tabindex="-1" href="#start-menu"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开始菜单</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可扩展的侧边栏
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">应用程序列表、文档/图片/视频快捷方式、电源（清除会话）</font></font></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">聚光灯视觉效果</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件夹支持</font></font></li>
+<li><font style="vertical-align: inherit;"><strong><em><font style="vertical-align: inherit;">使用SHIFT+ESC</font></em></strong><font style="vertical-align: inherit;">打开键盘快捷键</font></font><strong><em><font style="vertical-align: inherit;"></font></em></strong>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或者全屏时的 Windows 键</font></font></li>
+</ul>
+</li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-taskbar" class="anchor" aria-hidden="true" tabindex="-1" href="#taskbar"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">任务栏</font></font></h3>
+<ul dir="auto">
+<li><a href="https://github.com/bubkoo/html-to-image"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">查看</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">窗口的悬停预览</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">聚焦窗口指示器</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">搜索菜单（带最近的文件）</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-clock" class="anchor" aria-hidden="true" tabindex="-1" href="#clock"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">钟</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" rel="nofollow"><font style="vertical-align: inherit;">在Web Worker</font></a><font style="vertical-align: inherit;">中运行</font></font><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" rel="nofollow"><font style="vertical-align: inherit;"></font></a>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><a href="https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas" rel="nofollow"><font style="vertical-align: inherit;">在OffscreenCanvas</font></a><font style="vertical-align: inherit;">中绘制</font></font><a href="https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas" rel="nofollow"><font style="vertical-align: inherit;"></font></a></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NTP服务器时间模式（</font></font><a href="http://www.ntpjs.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ntp.js</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">加载时与系统时钟同步</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">日期工具提示</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">日历弹出窗口</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-background" class="anchor" aria-hidden="true" tabindex="-1" href="#background"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">背景</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">动态动画壁纸（</font></font><a href="https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OffscreenCanvas</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> / </font></font><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Web Worker</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）
+</font></font><ul dir="auto">
+<li><a href="https://www.vantajs.com/?effect=waves" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">波浪</font></font></a></li>
+<li><a href="https://znah.net/hexells/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">赫克塞尔斯</font></font></a></li>
+<li><a href="https://rezmason.github.io/matrix/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">矩阵</font></font></a></li>
+<li><a href="https://www.shadertoy.com/view/fstyD4" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">海岸风景</font></font></a></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过图像/视频设置（填充、适合、拉伸、平铺、居中）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图片幻灯片</font></font></li>
+<li><a href="https://api.nasa.gov/#apod" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">每日天文图片</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AI生成的壁纸</font></font><a href="https://stability.ai/stable-diffusion" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">稳定扩散</font></font></a></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-url" class="anchor" aria-hidden="true" tabindex="-1" href="#url"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">网址</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">查询参数加载
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">例子：
+</font></font><ul dir="auto">
+<li><code>/?url=/CREDITS.md</code></li>
+<li><code>/?app=Browser</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 tabindex="-1" dir="auto"><a id="user-content-apps-" class="anchor" aria-hidden="true" tabindex="-1" href="#apps-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">应用程序🧪</font></font></h1>
+<h3 tabindex="-1" dir="auto"><a id="user-content-boxedwine-exe-zip" class="anchor" aria-hidden="true" tabindex="-1" href="#boxedwine-exe-zip"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="http://www.boxedwine.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">盒装葡萄酒</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（</font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.exe、.zip</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">运行 16/32 位 Windows 应用程序</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-browser-htm-html" class="anchor" aria-hidden="true" tabindex="-1" href="#browser-htm-html"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">浏览器（</font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.htm、.html</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">加载网站（</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持 CORS</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">书签栏</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">网站图标支持</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">后退/前进和重新加载</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过地址栏进行 Google 搜索</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IPFS协议支持</font></font></li>
+<li><a href="https://github.com/wayou/t-rex-runner"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">chrome://恐龙</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">游戏</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-devtools" class="anchor" aria-hidden="true" tabindex="-1" href="#devtools"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://eruda.liriliri.io/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开发工具</font></font></a></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">控制台、元素、网络、资源、源、DOM</font></font></li>
+<li><font style="vertical-align: inherit;"><strong><em><font style="vertical-align: inherit;">从“开始”菜单或SHIFT+F12</font></em></strong><font style="vertical-align: inherit;">激活</font></font><strong><em><font style="vertical-align: inherit;"></font></em></strong></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-emulatorjs-32x-a26-a52-a78-gb-gba-gbc-gen-gg-j64-jag-lnx-n64-nds-nes-ngc-ngp-pce-sfc-smc-smd-sms-v64-vb-vboy-ws-wsc-z64" class="anchor" aria-hidden="true" tabindex="-1" href="#emulatorjs-32x-a26-a52-a78-gb-gba-gbc-gen-gg-j64-jag-lnx-n64-nds-nes-ngc-ngp-pce-sfc-smc-smd-sms-v64-vb-vboy-ws-wsc-z64"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://github.com/ethanaobrien/emulatorjs"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">EmulatorJS</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（</font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.32x、.a26、.a52、.a78、.gb、.gba、.gbc、.gen、.gg、.j64、.jag、.lnx、.n64、.nds、.nes、.ngc、 .ngp、.pce、.sfc、.smc、.smd、.sms、.v64、.vb、.vboy、.ws、.wsc、.z64</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">玩主机游戏 ROM</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-irc" class="anchor" aria-hidden="true" tabindex="-1" href="#irc"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://kiwiirc.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IRC</font></font></a></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">互联网中继聊天客户端</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过 WebSocket 连接</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-js-dos-exe-jsdos-zip" class="anchor" aria-hidden="true" tabindex="-1" href="#js-dos-exe-jsdos-zip"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://js-dos.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">js-dos</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（</font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.exe、.jsdos、.zip</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DOS模拟器</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关闭时自动保存状态
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">/用户/公共/快照</font></font></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动调整窗口大小</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-marked-md" class="anchor" aria-hidden="true" tabindex="-1" href="#marked-md"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://marked.js.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">标记</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">( </font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.md</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> )</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">降价查看器</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-messenger" class="anchor" aria-hidden="true" tabindex="-1" href="#messenger"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">信使</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">加密直接消息客户端</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">利用</font></font><a href="https://nostr.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nostr 协议</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">( </font></font><a href="https://github.com/nostr-protocol/nips/blob/master/04.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NIP-04</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> )</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动创建公钥/私钥</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-monaco-editor" class="anchor" aria-hidden="true" tabindex="-1" href="#monaco-editor"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://microsoft.github.io/monaco-editor/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">摩纳哥编辑</font></font></a></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">代码/文本编辑器</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持所有文件类型</font></font></li>
+<li><font style="vertical-align: inherit;"><strong><em><font style="vertical-align: inherit;">通过CTRL+S</font></em></strong><font style="vertical-align: inherit;">保存文件</font></font><strong><em><font style="vertical-align: inherit;"></font></em></strong></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">行数、光标位置、语言 ID</font></font></li>
+<li><a href="https://prettier.io/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">更漂亮的</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">格式
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">json、js/ts、css/sass/less、html、markdown</font></font></li>
+</ul>
+</li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-paint-bmp-gif-ico-jpg-png-tiff-webp" class="anchor" aria-hidden="true" tabindex="-1" href="#paint-bmp-gif-ico-jpg-png-tiff-webp"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://github.com/1j01/jspaint"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">绘画</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（</font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.bmp、.gif、.ico、.jpg、.png、.tiff、.webp、</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">创建和编辑图像</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-pdf-pdf" class="anchor" aria-hidden="true" tabindex="-1" href="#pdf-pdf"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://mozilla.github.io/pdf.js/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PDF</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ( </font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.pdf</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> )</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">渲染/打印 PDF</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">页面当前/计数和缩放</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-photos" class="anchor" aria-hidden="true" tabindex="-1" href="#photos"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">相片</font></font></h3>
+<ul dir="auto">
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#supported_image_formats" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持的格式</font></font></a>
+<ul dir="auto">
+<li><a href="https://github.com/niutech/jxl.js"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">JPEG XL</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ( </font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.jxl</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> )</font></font></li>
+<li><a href="https://gist.github.com/nicolaslegland/f0577cb49b1e56b729a2c0fc0aa151ba"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">QOI</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ( </font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.qoi</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> )</font></font></li>
+<li><a href="https://github.com/photopea/UTIF.js"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TIFF</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（</font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.tif、.tiff</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">全屏和</font></font><a href="https://github.com/anvaka/panzoom"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">缩放</font></font></a></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-ruffle-swf-spl" class="anchor" aria-hidden="true" tabindex="-1" href="#ruffle-swf-spl"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://ruffle.rs/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">荷叶边</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（</font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.swf、.spl</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Flash播放器模拟器</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-stable-diffusion" class="anchor" aria-hidden="true" tabindex="-1" href="#stable-diffusion"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://stability.ai/stable-diffusion" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">稳定扩散</font></font></a></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用人工智能创建 512x512 图像</font></font></li>
+<li><font style="vertical-align: inherit;"><a href="https://mlc.ai/web-stable-diffusion/" rel="nofollow"><font style="vertical-align: inherit;">使用WebSD</font></a><font style="vertical-align: inherit;">在本地运行</font></font><a href="https://mlc.ai/web-stable-diffusion/" rel="nofollow"><font style="vertical-align: inherit;"></font></a></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-terminal" class="anchor" aria-hidden="true" tabindex="-1" href="#terminal"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://xtermjs.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">终端</font></font></a></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件系统支持</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动完成和历史记录</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将命令通过管道连接在一起</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">命令列表通过</font></font><code>help</code></li>
+<li><a href="https://isomorphic-git.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Git 支持</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（签出和克隆）</font></font></li>
+<li><a href="https://pyodide.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Python 支持</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">( </font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.py</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> )</font></font></li>
+<li><a href="https://wapm.io/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">WebAssembly 包管理器</font></font></a>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">前任：</font></font><code>wapm cowsay moo</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（</font></font><a href="https://wapm.io/package/cowsay" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">＃</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></li>
+</ul>
+</li>
+<li><a href="https://wttr.in/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">天气信息</font></font></a></li>
+<li><a href="https://adrianotiger.github.io/web-esheep/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电子羊</font></font></a></li>
+<li><font style="vertical-align: inherit;"><strong><em><font style="vertical-align: inherit;">从“开始”菜单或SHIFT+F10</font></em></strong><font style="vertical-align: inherit;">激活</font></font><strong><em><font style="vertical-align: inherit;"></font></em></strong></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">新取</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-tinymce-rtf-whtml" class="anchor" aria-hidden="true" tabindex="-1" href="#tinymce-rtf-whtml"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://www.tiny.cloud/tinymce/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TinyMCE</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（</font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.rtf、.whtml</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">阅读和所见即所得模式</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件保存支持</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-virtual-x86-img-iso" class="anchor" aria-hidden="true" tabindex="-1" href="#virtual-x86-img-iso"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://copy.sh/v86/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">虚拟 x86</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（</font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.img、.iso</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x86 模拟器</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关闭时自动保存状态
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">/用户/公共/快照</font></font></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动调整窗口大小</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-video-player" class="anchor" aria-hidden="true" tabindex="-1" href="#video-player"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://videojs.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频播放器</font></font></a></h3>
+<ul dir="auto">
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持的格式</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">播放</font></font><a href="https://github.com/videojs/videojs-youtube"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">YouTube</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频/快捷方式</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">键盘快捷键（音量、搜索、缩放、全屏）</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-vim" class="anchor" aria-hidden="true" tabindex="-1" href="#vim"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://github.com/coolwanglu/vim.js"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">维姆</font></font></a></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">代码/文本编辑器</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持所有文件类型</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-webamp-mp3-wsz" class="anchor" aria-hidden="true" tabindex="-1" href="#webamp-mp3-wsz"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://webamp.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">网络放大器</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（</font></font><strong><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.mp3、.wsz</font></font></em></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Winamp 音频播放器</font></font></li>
+<li><a href="https://skins.webamp.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">皮肤支持</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">播放列表和流媒体支持</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可视化支持（</font></font><a href="https://github.com/jberg/butterchurn"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">“Milkdrop”</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></li>
+</ul>
+<h1 tabindex="-1" dir="auto"><a id="user-content-games-" class="anchor" aria-hidden="true" tabindex="-1" href="#games-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">游戏🎮</font></font></h1>
+<h3 tabindex="-1" dir="auto"><a id="user-content-classicube" class="anchor" aria-hidden="true" tabindex="-1" href="#classicube"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://www.classicube.net/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">经典魔方</font></font></a></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Minecraft 经典兼容客户端</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-dx-ball" class="anchor" aria-hidden="true" tabindex="-1" href="#dx-ball"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://habr.com/en/post/147339/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DX-球</font></font></a></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">像打砖块一样的方块破坏街机游戏</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-space-cadet-pinball" class="anchor" aria-hidden="true" tabindex="-1" href="#space-cadet-pinball"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://github.com/alula/SpaceCadetPinball"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">太空学员弹球</font></font></a></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">从 Windows 进行 3D Pinball 逆向工程</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-quake-iii-arena" class="anchor" aria-hidden="true" tabindex="-1" href="#quake-iii-arena"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><a href="https://github.com/lrusso/Quake3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">雷神之锤 III 竞技场</font></font></a></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">经典第一人称射击游戏的移植版</font></font></li>
+</ul>
+<h1 tabindex="-1" dir="auto"><a id="user-content-try-it-" class="anchor" aria-hidden="true" tabindex="-1" href="#try-it-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">尝试一下🚀</font></font></h1>
+<h5 tabindex="-1" dir="auto"><a id="user-content-requirements" class="anchor" aria-hidden="true" tabindex="-1" href="#requirements"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要求</font></font></h5>
+<ul dir="auto">
+<li><a href="https://nodejs.org/en/download/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Node.js</font></font></a></li>
+<li><a href="https://yarnpkg.com/en/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">纱</font></font></a></li>
+</ul>
+<h5 tabindex="-1" dir="auto"><a id="user-content-development" class="anchor" aria-hidden="true" tabindex="-1" href="#development"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">发展</font></font></h5>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>yarn install
 yarn build:prebuild
 yarn dev
-```
-
-##### Production
-
-```
-yarn install
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="yarn install
+yarn build:prebuild
+yarn dev" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h5 tabindex="-1" dir="auto"><a id="user-content-production" class="anchor" aria-hidden="true" tabindex="-1" href="#production"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">生产</font></font></h5>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>yarn install
 yarn build
 yarn serve
-```
-
-##### Docker
-
-```
-docker build -t daedalos .
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="yarn install
+yarn build
+yarn serve" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h5 tabindex="-1" dir="auto"><a id="user-content-docker" class="anchor" aria-hidden="true" tabindex="-1" href="#docker"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">码头工人</font></font></h5>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>docker build -t daedalos .
 docker run -dp 3000:3000 --rm --name daedalos daedalos
-```
-
-##### Notes
-
-- If during `yarn install` you receive the error `digital envelope routines::unsupported`, you need to set `NODE_OPTIONS` to `--openssl-legacy-provider` ([1](https://github.com/DustinBrett/daedalOS/blob/main/Dockerfile#L3), [2](https://github.com/DustinBrett/daedalOS/blob/main/.github/workflows/main.yml#L17), [3](https://stackoverflow.com/a/69699772/5895982))
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="docker build -t daedalos .
+docker run -dp 3000:3000 --rm --name daedalos daedalos" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h5 tabindex="-1" dir="auto"><a id="user-content-notes" class="anchor" aria-hidden="true" tabindex="-1" href="#notes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">笔记</font></font></h5>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果在过程中</font></font><code>yarn install</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">收到错误</font></font><code>digital envelope routines::unsupported</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，则需要设置</font></font><code>NODE_OPTIONS</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为</font></font><code>--openssl-legacy-provider</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">( </font></font><a href="https://github.com/DustinBrett/daedalOS/blob/main/Dockerfile#L3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , </font></font><a href="https://github.com/DustinBrett/daedalOS/blob/main/.github/workflows/main.yml#L17"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , </font></font><a href="https://stackoverflow.com/a/69699772/5895982" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ) 。</font></font></li>
+</ul>
+</article></div>
